@@ -8,7 +8,7 @@
 }
 
 body{
-  background: linear-gradient(to right, #d4d3dd, #efefbb);
+  background-color: #16141b;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,10 +16,12 @@ body{
 }
 h1{
   letter-spacing: 5px;
+  color: aliceblue;
 }
 
 .pokeContainer{
   display: flex;
+  color: aliceblue;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
@@ -28,9 +30,9 @@ h1{
 }
 
 .pokemon{
-  background-color: #ffcaa7;
+  background:linear-gradient(to bottom, rgb(43, 42, 42), rgb(27, 27, 27));
   border-radius: 10px;
-  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  border: lightgreen solid 4px;
   margin: 10px;
   padding: 20px;
   text-align: center;
@@ -40,7 +42,12 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(
+    to bottom,
+    rgba(214, 214, 214, 0.3),
+    rgba(77, 77, 77, 0.1)
+  );
+  box-shadow: 0 0 10px 10px rgba(202, 201, 201, 0.05);
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -53,7 +60,10 @@ h1{
 .info{
   margin-top: 20px;
 }
-
+.type span{
+text-transform: capitalize;
+font-weight: bold;
+}
 .number{
   background-color:rgba(0, 0, 0, 0.15) ;
   padding: 2px 13px;

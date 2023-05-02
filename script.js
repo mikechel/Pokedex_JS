@@ -1,20 +1,24 @@
 const pokeContainer = document.querySelector("#pokeContainer");
 const pokemonCount = 150;
 const colors = {
-  fire: '#FDDFDF',
-  grass: '#DEFDE0',
-  electric: '#FCF7DE',
-  water: '#DEF3FD',
-  ground: '#f4e7da',
-  rock: '#d5d5d4',
-  fairy: '#fceaff',
-  poison: '#98d7a5',
-  bug: '#f8d5a3',
-  dragon: '#97b3e6',
-  psychic: '#eaeda1',
-  flying: '#F5F5F5',
-  fighting: '#E6E0D4',
-  normal: '#F5F5F5'
+  fire:'orange',
+  grass:'lightgreen',
+  electric:'yellow',
+  water:'#70ffea',
+  ground:'darkgrey',
+  rock:'grey',
+  fairy:'pink',
+  poison:'greenyellow',
+  bug:'#94ecbe',
+  dragon:'orange',
+  psychic:'#7c7db6', 
+  flying:'#fcca46',
+  fighting:'darkgrey',
+  normal:'lightgrey',
+  ice:'#00f2f2',
+  dark: '#4f7ecf',
+  ghost: '#7685a7',
+  steel: 'steelblue',
 }
 
 const mainTypes = Object.keys(colors);
@@ -38,13 +42,14 @@ const createPokemonCard = (poke) => {
   card.classList.add("pokemon");
 
   const name = poke.name[0].toUpperCase() + poke.name.slice(1); 
+
   const id = poke.id.toString().padStart(3, '0');
 
   const pokeTypes = poke.types.map(type => type.type.name);
   const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1);
   const color = colors[type];
 
-  card.style.backgroundColor = color;
+  card.style.borderColor = color;
 
   const pokemonInnerHTML = `
     <div class="imgContainer">
