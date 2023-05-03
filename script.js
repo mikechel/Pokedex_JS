@@ -46,10 +46,15 @@ const createPokemonCard = (poke) => {
   const id = poke.id.toString().padStart(3, '0');
 
   const pokeTypes = poke.types.map(type => type.type.name);
-  const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1);
-  const color = colors[type];
+
+  const type = mainTypes.reduce(type => pokeTypes);
+
+  //console.log(type);
+  
+  const color = colors[type[0]];
 
   card.style.borderColor = color;
+  card.style.boxShadow = `0 0 6px ${color}`
 
   const pokemonInnerHTML = `
     <div class="imgContainer">
@@ -58,7 +63,7 @@ const createPokemonCard = (poke) => {
     <div class="infos">
       <span class="number">#${id}</span>
       <h3 class="name">${name}</h3>
-      <small class="type">Type: <span>${type}</span></small>
+      <small class="type">Type: <span>${type.join(" | ")}</span></small>
     </div>
   `
 
